@@ -15,8 +15,28 @@ export class TareasManager {
     this.setArregloTareas();
   }
 
-  listaTareas(){
-    this.listaTareas.innerHTML = '';
-    this.arregloTareas.reverse
+  listaTareas() {
+    this.listaTareas.innerHTML = "";
+    this.arregloTareas.reverse().forEach((tarea) => {
+      this.listaTareas.innerHTML += `
+        <li id="${tarea.id}">
+        <input type="text" class="input-tarea" value="${tarea.descripcion}"
+        <button class="boton-eliminar">X</button>
+        </li>
+        `;
+    });
+  }
+
+  editarTarea(idTarea, descripcion) {
+    const tarea = this.arregloTareas.find((t) => t.id == idTarea);
+    if (tarea) {
+      tarea.editar(descripcion);
+      this.setArregloTareas();
+    }
+  }
+
+  eliminarTarea(idTarea) {
+    this.arregloTareas = this.arregloTareas.filter((t) => t.id != idTarea);
+    this.setArregloTareas();
   }
 }
