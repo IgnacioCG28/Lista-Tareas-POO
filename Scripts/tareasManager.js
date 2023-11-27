@@ -20,7 +20,7 @@ export class TareasManager {
     this.arregloTareas.reverse().forEach((tarea) => {
       this.listaTareas.innerHTML += `
         <li id="${tarea.id}">
-        <input type="text" class="input-tarea" value="${tarea.descripcion}"
+        <input type="text" class="input-tarea" value="${tarea.descripcion}">
         <button class="boton-eliminar">X</button>
         </li>
         `;
