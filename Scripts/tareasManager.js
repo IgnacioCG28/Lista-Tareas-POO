@@ -14,4 +14,9 @@ export class TareasManager {
     this.setContador();
     this.setArregloTareas();
   }
+
+  listaTareas(){
+    this.listaTareas.innerHTML = '';
+    this.arregloTareas.reverse
+  }
 }
