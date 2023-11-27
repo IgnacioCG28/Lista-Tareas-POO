@@ -40,25 +40,36 @@ export class TareasManager {
     this.setArregloTareas();
   }
 
-  limpiarTodo(){
+  limpiarTodo() {
     this.arregloTareas = [];
     this.contador = 0;
     this.setArregloTareas();
     this.setContador();
   }
 
-  getContador(){
+  getContador() {
     const cont = localStorage.getItem("contador");
     return cont;
   }
 
-  setContador(){
-    localStorage.setItem("contador",this.contador);
+  setContador() {
+    localStorage.setItem("contador", this.contador);
   }
 
-  inicializarContador(){
+  inicializarContador() {
     if (this.getContador() != null) {
-        this.contador = this.getContador();
+      this.contador = this.getContador();
     }
+  }
+
+  getArregloTareas() {
+    this.setContador();
+    const arreglo = JSON.parse(localStorage.getItem("arregloTareas"));
+    return arreglo || [];
+  }
+
+  setArregloTareas() {
+    localStorage.setItem("arregloTareas", JSON.stringify(this.arregloTareas));
+    this.listaTareas();
   }
 }
