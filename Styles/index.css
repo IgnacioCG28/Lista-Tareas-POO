@@ -4,17 +4,18 @@
 }
 
 :root {
-  --studio-50: #faf6fe;
-  --studio-100: #f4eafd;
-  --studio-200: #ebdafa;
-  --studio-300: #dcbcf6;
-  --studio-400: #c691ef;
-  --studio-500: #b066e6;
-  --studio-600: #9b47d6;
-  --studio-700: #8635bd;
-  --studio-800: #703099;
-  --studio-900: #5c287b;
-  --studio-950: #3e115a;
+  --cornflower-blue-50: #eef6ff;
+  --cornflower-blue-100: #daeaff;
+  --cornflower-blue-200: #bddbff;
+  --cornflower-blue-300: #90c6ff;
+  --cornflower-blue-400: #53a1ff;
+  --cornflower-blue-500: #3582fc;
+  --cornflower-blue-600: #1f62f1;
+  --cornflower-blue-700: #174cde;
+  --cornflower-blue-800: #193fb4;
+  --cornflower-blue-900: #1a398e;
+  --cornflower-blue-950: #152456;
+
   --black: rgb(30, 30, 30);
 }
 html {
@@ -35,11 +36,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
- }
+  background-image: url(/Imgs/wall95.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
 
 h1 {
-  color: var(--studio-800);
+  overflow: hidden;
+  color: var(--cornflower-blue-800);
   margin: 3rem;
+  animation: typing 2s linear infinite;
 }
 
 .container {
@@ -48,23 +55,25 @@ h1 {
   align-items: center;
   flex-direction: column;
   width: 50rem;
-  background: var(--studio-400);
+  background: var(--cornflower-blue-400);
   background: linear-gradient(
     135deg,
-    var(--studio-300) 35%,
-    var(--studio-900) 100%
+    var(--cornflower-blue-300) 35%,
+    var(--cornflower-blue-900) 100%
   );
   margin: 5rem;
   padding-bottom: 3rem;
+  box-shadow: var(--cornflower-blue-950) 10px 10px 15px 5px;
 }
 
-li{
-    list-style: upper-roman;
+li {
+  list-style: none;
+  padding: 5px;
 }
 
 button {
-  background-color: var(--studio-200);
-  color: var(--studio-950);
+  background-color: var(--cornflower-blue-200);
+  color: var(--cornflower-blue-950);
   font-family: "W95FA";
   font-size: medium;
   border-radius: 5%;
@@ -74,23 +83,41 @@ button {
   cursor: pointer;
 }
 
-.boton-eliminar{
-    width: 3rem;
-    height: 2rem;
+button:hover{
+  background-color: var(--cornflower-blue-600);
+  color: var(--cornflower-blue-50);
 }
 
-.LatBtn{
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    height: 100%;
-    padding-right: 15px;
+.boton-eliminar {
+  width: 3rem;
+  height: 2rem;
 }
 
-.input-tarea{
-    border: var(--studio-300);
-    color: var(--studio-300);
-    background-color: var(--black);
-    width: 10rem;
-    height: 2rem ;
+.LatBtn {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100%;
+  padding-right: 15px;
+}
+
+
+.input-tarea {
+  border: var(--cornflower-blue-300);
+  color: var(--cornflower-blue-50);
+  background-color: var(--black);
+  width: 10rem;
+  height: 2rem;
+}
+
+@keyframes typing {
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
 }
